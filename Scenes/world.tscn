@@ -1,4 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://cv40k2ko0sdwm"]
+[gd_scene load_steps=7 format=3 uid="uid://cv40k2ko0sdwm"]
+
+[ext_resource type="PackedScene" uid="uid://dshj44alc06o" path="res://Scenes/main_character.tscn" id="1_a02cp"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_yp4wr"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -25,6 +27,9 @@ shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_go701")
+
+[node name="MainCharacter" parent="." instance=ExtResource("1_a02cp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.1562, 0.873777, -3.98395)
 
 [node name="WorldAssets" type="Node" parent="."]
 
