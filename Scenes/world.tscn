@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cv40k2ko0sdwm"]
+[gd_scene load_steps=8 format=3 uid="uid://cv40k2ko0sdwm"]
 
 [ext_resource type="PackedScene" uid="uid://dshj44alc06o" path="res://Scenes/main_character.tscn" id="1_a02cp"]
 
@@ -19,10 +19,13 @@ tonemap_mode = 2
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8j60k"]
 albedo_color = Color(0.164706, 1, 0.388235, 1)
 
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_a02cp"]
+points = PackedVector3Array(-0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5)
+
 [node name="World" type="Node3D"]
 
 [node name="DirectionalLight" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 11.4954, 17.1299, -9.446)
+transform = Transform3D(-0.836516, -0.288849, 0.465625, 0.224144, 0.595035, 0.771812, -0.5, 0.75, -0.433013, 11.4954, 17.1299, -9.446)
 shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -34,10 +37,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.1562, 0.873777, -3.98395)
 [node name="WorldAssets" type="Node" parent="."]
 
 [node name="Block" type="MeshInstance3D" parent="WorldAssets"]
-transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, -15, 0, -15)
+transform = Transform3D(9.99986, -0.00495538, -0.0209859, 0.0496385, 0.999979, 0.0404777, 0.0207847, -0.00405813, 9.9999, -15, 0, -15)
 mesh = SubResource("BoxMesh_5a7ea")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_8j60k")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="WorldAssets/Block"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldAssets/Block/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_a02cp")
 
 [node name="Block2" type="MeshInstance3D" parent="WorldAssets"]
 transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, -5, 0, -15)
@@ -45,35 +53,87 @@ mesh = SubResource("BoxMesh_5a7ea")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_8j60k")
 
+[node name="StaticBody3D" type="StaticBody3D" parent="WorldAssets/Block2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldAssets/Block2/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_a02cp")
+
 [node name="Block3" type="MeshInstance3D" parent="WorldAssets"]
-transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, 5, 0, -15)
+transform = Transform3D(9.99986, -0.00495538, -0.0209859, 0.0496385, 0.999979, 0.0404777, 0.0207847, -0.00405813, 9.9999, -15, 0, -5)
 mesh = SubResource("BoxMesh_5a7ea")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_8j60k")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="WorldAssets/Block3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldAssets/Block3/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_a02cp")
 
 [node name="Block4" type="MeshInstance3D" parent="WorldAssets"]
-transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, 15, 0, -15)
-mesh = SubResource("BoxMesh_5a7ea")
-skeleton = NodePath("../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_8j60k")
-
-[node name="Block5" type="MeshInstance3D" parent="WorldAssets"]
-transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, -15, 0, -5)
-mesh = SubResource("BoxMesh_5a7ea")
-skeleton = NodePath("../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_8j60k")
-
-[node name="Block6" type="MeshInstance3D" parent="WorldAssets"]
 transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, -5, 0, -5)
 mesh = SubResource("BoxMesh_5a7ea")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_8j60k")
 
-[node name="Block7" type="MeshInstance3D" parent="WorldAssets"]
-transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, 5, 0, -5)
+[node name="StaticBody3D" type="StaticBody3D" parent="WorldAssets/Block4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldAssets/Block4/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_a02cp")
+
+[node name="Block5" type="MeshInstance3D" parent="WorldAssets"]
+transform = Transform3D(9.99986, -0.00495538, -0.0209859, 0.0496385, 0.999979, 0.0404777, 0.0207847, -0.00405813, 9.9999, 5, 0, -15)
 mesh = SubResource("BoxMesh_5a7ea")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_8j60k")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="WorldAssets/Block5"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldAssets/Block5/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_a02cp")
+
+[node name="Block17" type="MeshInstance3D" parent="WorldAssets"]
+transform = Transform3D(9.99986, -0.00495538, -0.0209859, 0.0496385, 0.999979, 0.0404777, 0.0207847, -0.00405813, 9.9999, 5, 0, -39)
+mesh = SubResource("BoxMesh_5a7ea")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_8j60k")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="WorldAssets/Block17"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldAssets/Block17/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_a02cp")
+
+[node name="Block18" type="MeshInstance3D" parent="WorldAssets"]
+transform = Transform3D(9.99986, -0.00495538, -0.0209859, 0.0496385, 0.999979, 0.0404777, 0.0207847, -0.00405813, 9.9999, -12, 4, -25)
+mesh = SubResource("BoxMesh_5a7ea")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_8j60k")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="WorldAssets/Block18"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldAssets/Block18/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_a02cp")
+
+[node name="Block6" type="MeshInstance3D" parent="WorldAssets"]
+transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, 15, 0, -15)
+mesh = SubResource("BoxMesh_5a7ea")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_8j60k")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="WorldAssets/Block6"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldAssets/Block6/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_a02cp")
+
+[node name="Block7" type="MeshInstance3D" parent="WorldAssets"]
+transform = Transform3D(9.99986, -0.00495538, -0.0209859, 0.0496385, 0.999979, 0.0404777, 0.0207847, -0.00405813, 9.9999, 5, 0, -5)
+mesh = SubResource("BoxMesh_5a7ea")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_8j60k")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="WorldAssets/Block7"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldAssets/Block7/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_a02cp")
 
 [node name="Block8" type="MeshInstance3D" parent="WorldAssets"]
 transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, 15, 0, -5)
@@ -81,50 +141,95 @@ mesh = SubResource("BoxMesh_5a7ea")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_8j60k")
 
+[node name="StaticBody3D" type="StaticBody3D" parent="WorldAssets/Block8"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldAssets/Block8/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_a02cp")
+
 [node name="Block9" type="MeshInstance3D" parent="WorldAssets"]
-transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, -15, 0, 5)
+transform = Transform3D(9.99986, -0.00495538, -0.0209859, 0.0496385, 0.999979, 0.0404777, 0.0207847, -0.00405813, 9.9999, 5, 0, 5)
 mesh = SubResource("BoxMesh_5a7ea")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_8j60k")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="WorldAssets/Block9"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldAssets/Block9/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_a02cp")
 
 [node name="Block10" type="MeshInstance3D" parent="WorldAssets"]
-transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, -5, 0, 5)
-mesh = SubResource("BoxMesh_5a7ea")
-skeleton = NodePath("../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_8j60k")
-
-[node name="Block11" type="MeshInstance3D" parent="WorldAssets"]
-transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, 5, 0, 5)
-mesh = SubResource("BoxMesh_5a7ea")
-skeleton = NodePath("../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_8j60k")
-
-[node name="Block12" type="MeshInstance3D" parent="WorldAssets"]
 transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, 15, 0, 5)
 mesh = SubResource("BoxMesh_5a7ea")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_8j60k")
 
-[node name="Block13" type="MeshInstance3D" parent="WorldAssets"]
-transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, -15, 0, 15)
+[node name="StaticBody3D" type="StaticBody3D" parent="WorldAssets/Block10"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldAssets/Block10/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_a02cp")
+
+[node name="Block11" type="MeshInstance3D" parent="WorldAssets"]
+transform = Transform3D(9.99986, -0.00495538, -0.0209859, 0.0496385, 0.999979, 0.0404777, 0.0207847, -0.00405813, 9.9999, 5, 0, 15)
 mesh = SubResource("BoxMesh_5a7ea")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_8j60k")
 
+[node name="StaticBody3D" type="StaticBody3D" parent="WorldAssets/Block11"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldAssets/Block11/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_a02cp")
+
+[node name="Block12" type="MeshInstance3D" parent="WorldAssets"]
+transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, 15, 0, 15)
+mesh = SubResource("BoxMesh_5a7ea")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_8j60k")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="WorldAssets/Block12"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldAssets/Block12/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_a02cp")
+
+[node name="Block13" type="MeshInstance3D" parent="WorldAssets"]
+transform = Transform3D(9.99986, -0.00495538, -0.0209859, 0.0496385, 0.999979, 0.0404777, 0.0207847, -0.00405813, 9.9999, -15, 0, 5)
+mesh = SubResource("BoxMesh_5a7ea")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_8j60k")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="WorldAssets/Block13"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldAssets/Block13/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_a02cp")
+
 [node name="Block14" type="MeshInstance3D" parent="WorldAssets"]
+transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, -5, 0, 5)
+mesh = SubResource("BoxMesh_5a7ea")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_8j60k")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="WorldAssets/Block14"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldAssets/Block14/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_a02cp")
+
+[node name="Block15" type="MeshInstance3D" parent="WorldAssets"]
+transform = Transform3D(9.99986, -0.00495538, -0.0209859, 0.0496385, 0.999979, 0.0404777, 0.0207847, -0.00405813, 9.9999, -15, 0, 15)
+mesh = SubResource("BoxMesh_5a7ea")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_8j60k")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="WorldAssets/Block15"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldAssets/Block15/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_a02cp")
+
+[node name="Block16" type="MeshInstance3D" parent="WorldAssets"]
 transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, -5, 0, 15)
 mesh = SubResource("BoxMesh_5a7ea")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_8j60k")
 
-[node name="Block15" type="MeshInstance3D" parent="WorldAssets"]
-transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, 5, 0, 15)
-mesh = SubResource("BoxMesh_5a7ea")
-skeleton = NodePath("../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_8j60k")
+[node name="StaticBody3D" type="StaticBody3D" parent="WorldAssets/Block16"]
 
-[node name="Block16" type="MeshInstance3D" parent="WorldAssets"]
-transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, 15, 0, 15)
-mesh = SubResource("BoxMesh_5a7ea")
-skeleton = NodePath("../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_8j60k")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldAssets/Block16/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_a02cp")

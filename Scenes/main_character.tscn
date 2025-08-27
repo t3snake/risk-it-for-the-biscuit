@@ -10,11 +10,18 @@ height = 0.808664
 [node name="MainCharacter" type="CharacterBody3D"]
 collision_layer = 2
 script = ExtResource("1_11o2n")
+killzone_y = -20.0
 
 [node name="CharacterModel" parent="." instance=ExtResource("2_auhcp")]
 
 [node name="Skeleton3D" parent="CharacterModel/character-male-e" index="0"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+bones/1/position = Vector3(0.0791, 0.221, -0.0867)
+bones/1/rotation = Quaternion(0.608761, 0, 0, 0.793353)
+bones/2/position = Vector3(-0.0761, 0.22, -0.009)
+bones/2/rotation = Quaternion(-0.382683, 0, 0, 0.92388)
+bones/4/rotation = Quaternion(0, 0, 0.130526, 0.991445)
+bones/5/rotation = Quaternion(0, 0, -0.130526, 0.991445)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.381681, 0)
@@ -22,9 +29,11 @@ shape = SubResource("CapsuleShape3D_keg3j")
 
 [node name="SpringArm3D" type="SpringArm3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
-spring_length = 5.0
+spring_length = 3.0
 margin = 0.1
 
 [node name="Camera3D" type="Camera3D" parent="SpringArm3D"]
+
+[connection signal="animation_finished" from="CharacterModel/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 
 [editable path="CharacterModel"]
