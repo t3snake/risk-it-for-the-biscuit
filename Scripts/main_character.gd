@@ -35,10 +35,12 @@ enum JumpState { LONG_JUMP, NORMAL_JUMP, BACKFLIP }
 var input = Vector2.ZERO
 var character_state : CharacterState
 var jump_state : JumpState
+
 var is_running : bool
 var is_jumping : bool
 var is_falling : bool # to play fall animation after jump
 var is_diving : bool
+var dive_direction_y = 0.0 # to save direction on diving to lerp to later
 
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity") * 3
 
@@ -53,7 +55,56 @@ func _ready() -> void:
 	is_diving = false
 	is_falling = false
 	is_jumping = false
+
+func _physics_process(delta):
+	if global_position.y < killzone_y:
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		game_over()
 	
+	velocity.y += -gravity * delta
+	if !is_jumping:
+		get_move_input(delta)
+	move_and_slide()
+	
+	set_character_state()
+	handle_animation()
+	
+	if !input.is_zero_approx() and !is_jumping:
+		model.rotation.y = lerp_angle(model.rotation.y, spring_arm.rotation.y, rotation_speed * delta)
+	elif is_diving:
+		model.rotation.y = lerp_angle(model.rotation.y, dive_direction_y, rotation_speed * delta)
+	
+	# Debug info
+	if is_jumping and absf(velocity.y) < 0.25 and show_debug_info:
+		if is_diving:
+			print("Dive Jump")
+		elif jump_state == JumpState.NORMAL_JUMP:
+			print("Normal Jump")
+		elif jump_state == JumpState.LONG_JUMP:
+			print("Long Jump")
+		var horiz_speed = Vector2(velocity.x, velocity.z)
+		print("Horizontal speed: " + str(horiz_speed.length()))
+		print("Vertical height: " + str(global_position.y))
+
+func get_move_input(delta):
+	var vy = velocity.y
+	velocity.y = 0
+	input = Input.get_vector("left", "right", "forward", "back")
+	var dir = Vector3(input.x, 0, input.y)
+	if spring_arm:
+		dir = dir.rotated(Vector3.UP, spring_arm.rotation.y)
+	var new_speed = speed*2 if is_running else speed
+	velocity = lerp(velocity, dir * new_speed, acceleration * delta)
+	velocity.y = vy
+
+func _unhandled_input(event):
+	if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
+		if event is InputEventMouseMotion:
+			# camera handling on mouse movement
+			spring_arm.rotation.x -= event.relative.y * mouse_sensitivity
+			spring_arm.rotation_degrees.x = clamp(spring_arm.rotation_degrees.x, -90.0, 30.0)
+			spring_arm.rotation.y -= event.relative.x * mouse_sensitivity
+
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
@@ -77,7 +128,7 @@ func _input(event: InputEvent) -> void:
 			var dive_velocity = get_dive_velocity()
 			# if dive in the opposite direction, the magnitude is same as initial jump
 			# if in same direction, the magnitude increases by 50%
-			if (dive_velocity + velocity).length_squared() > velocity.length_squared():
+			if dive_velocity.dot(velocity) > 0:
 				velocity = 1.5 * dive_velocity
 			else:
 				velocity = dive_velocity
@@ -93,6 +144,7 @@ func get_dive_velocity():
 	var cam_horizontal_dir = Vector2(cam_dir.x, cam_dir.z).normalized()
 	var player_horizontal_speed = Vector2(velocity.x, velocity.z).length()
 	var dive_horizontal_velocity = cam_horizontal_dir * player_horizontal_speed
+	dive_direction_y = spring_arm.rotation.y
 	
 	return Vector3(
 		dive_horizontal_velocity.x,
@@ -122,46 +174,6 @@ func set_character_state():
 	else:
 		character_state = CharacterState.WALK
 
-func _physics_process(delta):
-	if global_position.y < killzone_y:
-		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-		game_over()
-	
-	velocity.y += -gravity * delta
-	if !is_jumping:
-		get_move_input(delta)
-	move_and_slide()
-	
-	set_character_state()
-	handle_animation()
-	
-	if !input.is_zero_approx() and !is_jumping:
-		model.rotation.y = lerp_angle(model.rotation.y, spring_arm.rotation.y, rotation_speed * delta)
-	
-	# Debug info
-	if is_jumping and absf(velocity.y) < 0.25 and show_debug_info:
-		if is_diving:
-			print("Dive Jump")
-		elif jump_state == JumpState.NORMAL_JUMP:
-			print("Normal Jump")
-		elif jump_state == JumpState.LONG_JUMP:
-			print("Long Jump")
-		var horiz_speed = Vector2(velocity.x, velocity.z)
-		print("Horizontal speed: " + str(horiz_speed.length()))
-		print("Vertical height: " + str(global_position.y))
-		print("Vertical velocity: " + str(velocity.y))
-
-func get_move_input(delta):
-	var vy = velocity.y
-	velocity.y = 0
-	input = Input.get_vector("left", "right", "forward", "back")
-	var dir = Vector3(input.x, 0, input.y)
-	if spring_arm:
-		dir = dir.rotated(Vector3.UP, spring_arm.rotation.y)
-	var new_speed = speed*2 if is_running else speed
-	velocity = lerp(velocity, dir * new_speed, acceleration * delta)
-	velocity.y = vy
-
 func handle_animation():
 	match character_state:
 		CharacterState.WALK:
@@ -182,14 +194,6 @@ func play_animation(anim_name: String) -> void:
 		return
 	
 	anim_player.play(anim_name)
-
-func _unhandled_input(event):
-	if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
-		if event is InputEventMouseMotion:
-			# camera handling on mouse movement
-			spring_arm.rotation.x -= event.relative.y * mouse_sensitivity
-			spring_arm.rotation_degrees.x = clamp(spring_arm.rotation_degrees.x, -90.0, 30.0)
-			spring_arm.rotation.y -= event.relative.x * mouse_sensitivity
 
 func register_hit() -> void:
 	# TODO death? health?

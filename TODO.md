@@ -1,12 +1,14 @@
 # Todos
 
 - [x] Add killzone.
-- [ ] Tune Movement Acceleration and deceleration.
-- [ ] Figure out 3D tilemaps.
+- [x] Tune Movement Acceleration and deceleration -> not different values, good enough
+- [x] Figure out 3D tilemaps.
 - [x] Mario like long jump on crouch -> went with long jump on sprint.
 - [ ] Wall jump with drive animation ?
 - [ ] Timer for level, Highscore.
-- [ ] Mid air dash (add just horizontal speed or also vertical speed?)
+- [x] Mid air dash -> adds both horizontal and vertical
+- [ ] Add drag/smoke effect when movements stop
+- [ ] Add decorations at the end (flowers, trees, plants, grass)
 
 ## Cancelled
 - [ ] Mario like backflip after 

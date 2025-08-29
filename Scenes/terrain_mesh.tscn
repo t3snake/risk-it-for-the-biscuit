@@ -1,0 +1,108 @@
+[gd_scene load_steps=26 format=3 uid="uid://cm1f5ffcv78y8"]
+
+[ext_resource type="PackedScene" uid="uid://b743pv1vvv80h" path="res://Models/Terrain/barrel.glb" id="3_ve3y1"]
+[ext_resource type="PackedScene" uid="uid://bo3cadnksw2c6" path="res://Models/Terrain/block-grass-overhang-large-slope-steep-narrow.glb" id="30_rakfh"]
+[ext_resource type="PackedScene" uid="uid://b6dtecmh7ywlq" path="res://Models/Terrain/block-grass-overhang-large-slope-steep.glb" id="31_6usm2"]
+[ext_resource type="PackedScene" uid="uid://c6emh8sfvqe2" path="res://Models/Terrain/block-grass-overhang-large.glb" id="34_uj6y5"]
+[ext_resource type="PackedScene" uid="uid://bqr2n2dmn334d" path="res://Models/Terrain/button-round.glb" id="86_a1e4y"]
+[ext_resource type="PackedScene" uid="uid://c8inppl2cm2fs" path="res://Models/Terrain/coin-gold.glb" id="90_m8om7"]
+[ext_resource type="PackedScene" uid="uid://cqro25sakykkh" path="res://Models/Terrain/crate.glb" id="95_bgqwm"]
+[ext_resource type="PackedScene" uid="uid://bdf7upfrtit30" path="res://Models/Terrain/fence-corner.glb" id="102_i4cn1"]
+[ext_resource type="PackedScene" uid="uid://c8waklff25fyv" path="res://Models/Terrain/fence-straight.glb" id="107_cuygj"]
+[ext_resource type="PackedScene" uid="uid://c701rbrpg7axe" path="res://Models/Terrain/flag.glb" id="108_545wn"]
+[ext_resource type="PackedScene" uid="uid://1jg2sq4fjj1w" path="res://Models/Terrain/flowers-tall.glb" id="109_vg4li"]
+[ext_resource type="PackedScene" uid="uid://b13u12m7qpho5" path="res://Models/Terrain/flowers.glb" id="110_tnlgb"]
+[ext_resource type="PackedScene" uid="uid://b4boc4sbqra7t" path="res://Models/Terrain/grass.glb" id="111_n4myp"]
+[ext_resource type="PackedScene" uid="uid://dg25df0i6nrhp" path="res://Models/Terrain/heart.glb" id="112_xejq1"]
+[ext_resource type="PackedScene" uid="uid://dbrj2qif1umjg" path="res://Models/Terrain/jewel.glb" id="115_8eqjy"]
+[ext_resource type="PackedScene" uid="uid://b4pix6qwcdtng" path="res://Models/Terrain/mushrooms.glb" id="122_5bgb0"]
+[ext_resource type="PackedScene" uid="uid://mada1exlt8p4" path="res://Models/Terrain/plant.glb" id="123_wbc8t"]
+[ext_resource type="PackedScene" uid="uid://wmcrb6j046dk" path="res://Models/Terrain/platform-fortified.glb" id="124_75ds8"]
+[ext_resource type="PackedScene" uid="uid://c7hccbxl4sjpd" path="res://Models/Terrain/platform-ramp.glb" id="126_pd3c5"]
+[ext_resource type="PackedScene" uid="uid://ds4el8r12qnam" path="res://Models/Terrain/poles.glb" id="128_5v6vj"]
+[ext_resource type="PackedScene" uid="uid://c6s14syl56da8" path="res://Models/Terrain/rocks.glb" id="129_awxwo"]
+[ext_resource type="PackedScene" uid="uid://v5tbepo8vdyx" path="res://Models/Terrain/stones.glb" id="134_qjdw3"]
+[ext_resource type="PackedScene" uid="uid://d17i3dnndhrx" path="res://Models/Terrain/tree-pine-small.glb" id="137_1a8yv"]
+[ext_resource type="PackedScene" uid="uid://bp7lmiak3uit6" path="res://Models/Terrain/tree-pine.glb" id="140_3c408"]
+[ext_resource type="PackedScene" uid="uid://c56e8ky16enat" path="res://Models/Terrain/tree.glb" id="142_wig4r"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="block-grass-overhang-large2" parent="." instance=ExtResource("34_uj6y5")]
+
+[node name="block-grass-overhang-large" parent="block-grass-overhang-large2" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="barrel2" parent="." instance=ExtResource("3_ve3y1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+
+[node name="fence-straight2" parent="." instance=ExtResource("107_cuygj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 0)
+
+[node name="flag2" parent="." instance=ExtResource("108_545wn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 3)
+
+[node name="flowers-tall2" parent="." instance=ExtResource("109_vg4li")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 2)
+
+[node name="flowers" parent="." instance=ExtResource("110_tnlgb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -1)
+
+[node name="grass2" parent="." instance=ExtResource("111_n4myp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -2)
+
+[node name="mushrooms2" parent="." instance=ExtResource("122_5bgb0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -4)
+
+[node name="plant2" parent="." instance=ExtResource("123_wbc8t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -4)
+
+[node name="platform-fortified2" parent="." instance=ExtResource("124_75ds8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -3)
+
+[node name="tree-pine2" parent="." instance=ExtResource("140_3c408")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 6)
+
+[node name="tree-pine-small2" parent="." instance=ExtResource("137_1a8yv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 6)
+
+[node name="tree2" parent="." instance=ExtResource("142_wig4r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 6)
+
+[node name="stones2" parent="." instance=ExtResource("134_qjdw3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -4)
+
+[node name="rocks2" parent="." instance=ExtResource("129_awxwo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -4)
+
+[node name="poles2" parent="." instance=ExtResource("128_5v6vj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -4)
+
+[node name="platform-ramp2" parent="." instance=ExtResource("126_pd3c5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -1)
+
+[node name="jewel2" parent="." instance=ExtResource("115_8eqjy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 6)
+
+[node name="heart2" parent="." instance=ExtResource("112_xejq1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 6)
+
+[node name="fence-corner2" parent="." instance=ExtResource("102_i4cn1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 3)
+
+[node name="crate2" parent="." instance=ExtResource("95_bgqwm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 1)
+
+[node name="coin-gold2" parent="." instance=ExtResource("90_m8om7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -2)
+
+[node name="button-round2" parent="." instance=ExtResource("86_a1e4y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -6)
+
+[node name="block-grass-overhang-large-slope-steep-narrow2" parent="." instance=ExtResource("30_rakfh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 3)
+
+[node name="block-grass-overhang-large-slope-steep2" parent="." instance=ExtResource("31_6usm2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 3)
+
+[editable path="block-grass-overhang-large2"]

@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://d2k8unbyl0i4u"]
+
+[ext_resource type="PackedScene" uid="uid://c8inppl2cm2fs" path="res://Models/Terrain/coin-gold.glb" id="1_2qo34"]
+[ext_resource type="Script" uid="uid://dmhbt11gedtei" path="res://Scripts/coin.gd" id="1_jgi06"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jgi06"]
+size = Vector3(0.55191, 0.603943, 0.201721)
+
+[node name="Coin" type="Node3D"]
+script = ExtResource("1_jgi06")
+
+[node name="CoinScene" parent="." instance=ExtResource("1_2qo34")]
+transform = Transform3D(1.32919, 0, 0, 0, 1.31215, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00474548, 0.267242, 0.00131226)
+shape = SubResource("BoxShape3D_jgi06")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_coin_entered"]
+
+[editable path="CoinScene"]
