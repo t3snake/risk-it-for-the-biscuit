@@ -4,11 +4,11 @@ var timer: float
 var is_timer_active: bool
 
 # global state
-var total_levels: int = 6
+var total_levels: int = 4
 var levels_cleared: int
 # TODO this could be array since key is level
 var highscore_map: Dictionary
-var time_to_beat_map: Array  # in seconds
+var bonus_time_map: Array  # in seconds
 
 # current state
 var current_level: int
@@ -22,7 +22,7 @@ func _ready() -> void:
 	is_timer_active = false
 	
 	highscore_map = {}
-	time_to_beat_map = []
+	bonus_time_map = [3, 3, 3, 5]
 	for lvl in range(total_levels):
 		highscore_map[lvl] = 0
 
@@ -44,20 +44,17 @@ func set_level_cleared() -> void:
 		highscore_map[current_level - 1] = timer
 	elif timer < highscore_map[current_level - 1]:
 		highscore_map[current_level - 1] = timer
-	
-	timer = 0
-	
+
 func go_to_next_level() -> void:
 	if current_level < total_levels:
 		get_tree().change_scene_to_file(
 			"res://Scenes/level%d.tscn" % (current_level + 1)
 		)
 	else:
-		# TODO no more levels scenario
-		pass
-		
+		get_tree().change_scene_to_file("res://Scenes/ui/beat_game_menu.tscn")
+
 func restart_level() -> void:
-	get_tree().reload_current_scene()
+	get_tree().change_scene_to_file("res://Scenes/level%d.tscn" % current_level)
 
 func _process(delta: float) -> void:
 	if is_timer_active:

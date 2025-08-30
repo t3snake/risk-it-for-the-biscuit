@@ -48,15 +48,16 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity") * 3
 
 func _ready() -> void:
 	GlobalState.init_level(current_level)
-	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	GlobalState.start_timer()
 	
 	jump_state = JumpState.NORMAL_JUMP
 	character_state = CharacterState.IDLE
-	
 	is_running = false
 	is_diving = false
 	is_falling = false
 	is_jumping = false
+	
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 func _physics_process(delta):
 	check_level_beaten()
@@ -210,10 +211,12 @@ func register_hit() -> void:
 
 func check_level_beaten() -> void:
 	if GlobalState.is_current_level_cleared:
+		GlobalState.stop_timer()
+		set_physics_process(false)
 		await get_tree().create_timer(0.5).timeout
-		GlobalState.go_to_next_level()
+		get_tree().change_scene_to_file("res://Scenes/ui/end_menu.tscn")
 
 func game_over() -> void:
 	spring_arm.top_level = true;
 	await get_tree().create_timer(1).timeout
-	GlobalState.restart_level()
+	get_tree().change_scene_to_file("res://Scenes/ui/died_menu.tscn")

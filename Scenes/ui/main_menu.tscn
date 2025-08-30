@@ -1,118 +1,9 @@
-[gd_scene load_steps=24 format=3 uid="uid://dp4qb8oekxqq6"]
+[gd_scene load_steps=7 format=3 uid="uid://c4c2sowd24wio"]
 
-[ext_resource type="Script" uid="uid://pgdian6gpkeq" path="res://scripts/ui/main_menu.gd" id="1_n0re8"]
+[ext_resource type="Script" uid="uid://c3bvw14hke2n2" path="res://Scripts/ui/main_menu.gd" id="1_baxwh"]
 [ext_resource type="Texture2D" uid="uid://bw3amxscqygqq" path="res://assets/naveena/background_scaled.png" id="2_0sifs"]
 [ext_resource type="FontFile" uid="uid://cfrp63w0hyxlv" path="res://assets/MathewCarter/Charter Regular.ttf" id="3_vmm6a"]
-[ext_resource type="StyleBox" uid="uid://xeu7s8jdw8y2" path="res://resources/button_hover_texture.tres" id="4_82f1l"]
-[ext_resource type="Texture2D" uid="uid://bke51fbx1daf7" path="res://assets/TinySword/Warrior_Blue.png" id="5_623ms"]
-[ext_resource type="Texture2D" uid="uid://dlk155uraykp2" path="res://assets/TinySword/Torch_Yellow.png" id="6_pvng5"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_dtbdk"]
-atlas = ExtResource("5_623ms")
-region = Rect2(0, 0, 192, 192)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_twacx"]
-atlas = ExtResource("5_623ms")
-region = Rect2(192, 0, 192, 192)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8uq0m"]
-atlas = ExtResource("5_623ms")
-region = Rect2(384, 0, 192, 192)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8aosx"]
-atlas = ExtResource("5_623ms")
-region = Rect2(576, 0, 192, 192)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2wu45"]
-atlas = ExtResource("5_623ms")
-region = Rect2(768, 0, 192, 192)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_eefvt"]
-atlas = ExtResource("5_623ms")
-region = Rect2(960, 0, 192, 192)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_no87j"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_dtbdk")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_twacx")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8uq0m")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8aosx")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2wu45")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_eefvt")
-}],
-"loop": true,
-"name": &"default",
-"speed": 15.0
-}]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8gtea"]
-atlas = ExtResource("6_pvng5")
-region = Rect2(0, 0, 192, 192)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6muwn"]
-atlas = ExtResource("6_pvng5")
-region = Rect2(192, 0, 192, 192)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_e1lbo"]
-atlas = ExtResource("6_pvng5")
-region = Rect2(384, 0, 192, 192)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_x7yhm"]
-atlas = ExtResource("6_pvng5")
-region = Rect2(576, 0, 192, 192)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1wmyo"]
-atlas = ExtResource("6_pvng5")
-region = Rect2(768, 0, 192, 192)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1h04o"]
-atlas = ExtResource("6_pvng5")
-region = Rect2(960, 0, 192, 192)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4o16h"]
-atlas = ExtResource("6_pvng5")
-region = Rect2(1152, 0, 192, 192)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_50kli"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8gtea")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6muwn")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_e1lbo")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_x7yhm")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1wmyo")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1h04o")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4o16h")
-}],
-"loop": true,
-"name": &"default",
-"speed": 15.0
-}]
+[ext_resource type="StyleBox" uid="uid://1lsqtg2a4k5l" path="res://resources/button_hover_texture.tres" id="4_82f1l"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_bh31a"]
 load_path = "res://.godot/imported/Button_Blue_9Slides.png-26b0a6a8988a17ad04510c84eece77e0.ctex"
@@ -127,7 +18,7 @@ axis_stretch_horizontal = 2
 axis_stretch_vertical = 2
 
 [node name="MainMenu" type="CanvasLayer"]
-script = ExtResource("1_n0re8")
+script = ExtResource("1_baxwh")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 anchors_preset = 15
@@ -138,30 +29,36 @@ grow_vertical = 2
 texture = ExtResource("2_0sifs")
 stretch_mode = 1
 
-[node name="PlayerSprite" type="AnimatedSprite2D" parent="TextureRect"]
-position = Vector2(407, 262)
-sprite_frames = SubResource("SpriteFrames_no87j")
-autoplay = "default"
-
-[node name="FireGoblinSprite" type="AnimatedSprite2D" parent="TextureRect"]
-position = Vector2(1179, 258)
-sprite_frames = SubResource("SpriteFrames_50kli")
-autoplay = "default"
-flip_h = true
-
 [node name="GameTitle" type="Label" parent="TextureRect"]
 layout_mode = 0
-offset_left = 621.0
-offset_top = 218.0
-offset_right = 960.0
-offset_bottom = 287.0
+offset_left = 469.0
+offset_top = 103.0
+offset_right = 808.0
+offset_bottom = 172.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 3
 theme_override_fonts/font = ExtResource("3_vmm6a")
 theme_override_font_sizes/font_size = 50
-text = "Blade and Blast"
+text = "Lightspeed Bob"
+
+[node name="GameDescription" type="Label" parent="TextureRect"]
+layout_mode = 0
+offset_left = 129.0
+offset_top = 190.0
+offset_right = 1146.0
+offset_bottom = 418.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("3_vmm6a")
+theme_override_font_sizes/font_size = 50
+text = "Bob goes to the void dimension to retrieve gold biscuits to save his village from the tyranny of the Ultra Rich."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
 
 [node name="MarginContainer" type="MarginContainer" parent="TextureRect"]
 layout_mode = 1
@@ -187,8 +84,8 @@ size_flags_horizontal = 3
 focus_neighbor_bottom = NodePath(".")
 focus_next = NodePath(".")
 focus_previous = NodePath(".")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
 theme_override_fonts/font = ExtResource("3_vmm6a")
 theme_override_font_sizes/font_size = 48
@@ -210,8 +107,8 @@ size_flags_horizontal = 3
 focus_neighbor_bottom = NodePath(".")
 focus_next = NodePath(".")
 focus_previous = NodePath(".")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
 theme_override_fonts/font = ExtResource("3_vmm6a")
 theme_override_font_sizes/font_size = 48
@@ -232,8 +129,8 @@ size_flags_horizontal = 3
 focus_neighbor_bottom = NodePath("../PlayButton")
 focus_next = NodePath("../PlayButton")
 focus_previous = NodePath(".")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
 theme_override_fonts/font = ExtResource("3_vmm6a")
 theme_override_font_sizes/font_size = 48

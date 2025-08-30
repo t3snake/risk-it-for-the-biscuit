@@ -11,13 +11,18 @@ config_version=5
 [application]
 
 config/name="Risk it for the Biscuit"
-run/main_scene="uid://bwm41117lgfug"
+run/main_scene="uid://c4c2sowd24wio"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
 GlobalState="*res://Scripts/global_state.gd"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
 
 [input]
 

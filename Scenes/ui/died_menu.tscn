@@ -1,118 +1,25 @@
-[gd_scene load_steps=24 format=3 uid="uid://dh1ahk6c681uf"]
+[gd_scene load_steps=10 format=3 uid="uid://c7rci0gelfvjr"]
 
 [ext_resource type="Texture2D" uid="uid://bw3amxscqygqq" path="res://assets/naveena/background_scaled.png" id="1_a2k7q"]
-[ext_resource type="Script" uid="uid://c4ca8wypnlywc" path="res://scripts/ui/died_menu.gd" id="1_rts8r"]
-[ext_resource type="Texture2D" uid="uid://bke51fbx1daf7" path="res://assets/TinySword/Warrior_Blue.png" id="2_8553t"]
-[ext_resource type="Texture2D" uid="uid://dlk155uraykp2" path="res://assets/TinySword/Torch_Yellow.png" id="3_bjynh"]
+[ext_resource type="Script" uid="uid://brpr717d0d6yg" path="res://Scripts/ui/died_menu.gd" id="1_uwx80"]
+[ext_resource type="StyleBox" uid="uid://d1d80l7b6kqnf" path="res://resources/button_texture.tres" id="4_37nn7"]
 [ext_resource type="FontFile" uid="uid://cfrp63w0hyxlv" path="res://assets/MathewCarter/Charter Regular.ttf" id="4_kuoiw"]
-[ext_resource type="StyleBox" uid="uid://xeu7s8jdw8y2" path="res://resources/button_hover_texture.tres" id="5_6g3qy"]
+[ext_resource type="StyleBox" uid="uid://1lsqtg2a4k5l" path="res://resources/button_hover_texture.tres" id="5_6g3qy"]
+[ext_resource type="Texture2D" uid="uid://bdlftcxpln1wf" path="res://assets/TinySword/UI/Button_Blue_9Slides_Pressed.png" id="5_v7v7b"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_dtbdk"]
-atlas = ExtResource("2_8553t")
-region = Rect2(0, 0, 192, 192)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_twacx"]
-atlas = ExtResource("2_8553t")
-region = Rect2(192, 0, 192, 192)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8uq0m"]
-atlas = ExtResource("2_8553t")
-region = Rect2(384, 0, 192, 192)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8aosx"]
-atlas = ExtResource("2_8553t")
-region = Rect2(576, 0, 192, 192)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2wu45"]
-atlas = ExtResource("2_8553t")
-region = Rect2(768, 0, 192, 192)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_eefvt"]
-atlas = ExtResource("2_8553t")
-region = Rect2(960, 0, 192, 192)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_0qh17"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_dtbdk")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_twacx")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8uq0m")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8aosx")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2wu45")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_eefvt")
-}],
-"loop": true,
-"name": &"default",
-"speed": 15.0
-}]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8gtea"]
-atlas = ExtResource("3_bjynh")
-region = Rect2(0, 0, 192, 192)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6muwn"]
-atlas = ExtResource("3_bjynh")
-region = Rect2(192, 0, 192, 192)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_e1lbo"]
-atlas = ExtResource("3_bjynh")
-region = Rect2(384, 0, 192, 192)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_x7yhm"]
-atlas = ExtResource("3_bjynh")
-region = Rect2(576, 0, 192, 192)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1wmyo"]
-atlas = ExtResource("3_bjynh")
-region = Rect2(768, 0, 192, 192)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1h04o"]
-atlas = ExtResource("3_bjynh")
-region = Rect2(960, 0, 192, 192)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4o16h"]
-atlas = ExtResource("3_bjynh")
-region = Rect2(1152, 0, 192, 192)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_1xtmv"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8gtea")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6muwn")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_e1lbo")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_x7yhm")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1wmyo")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1h04o")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4o16h")
-}],
-"loop": true,
-"name": &"default",
-"speed": 15.0
-}]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6l1co"]
+content_margin_left = 64.0
+content_margin_top = 64.0
+content_margin_right = 64.0
+content_margin_bottom = 64.0
+texture = ExtResource("5_v7v7b")
+texture_margin_left = 64.0
+texture_margin_top = 64.0
+texture_margin_right = 64.0
+texture_margin_bottom = 64.0
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+region_rect = Rect2(0, 0, 192, 192)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_k11pl"]
 load_path = "res://.godot/imported/Button_Blue_9Slides.png-26b0a6a8988a17ad04510c84eece77e0.ctex"
@@ -127,7 +34,7 @@ axis_stretch_horizontal = 2
 axis_stretch_vertical = 2
 
 [node name="DiedMenu" type="CanvasLayer"]
-script = ExtResource("1_rts8r")
+script = ExtResource("1_uwx80")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 anchors_preset = 15
@@ -138,22 +45,12 @@ grow_vertical = 2
 texture = ExtResource("1_a2k7q")
 stretch_mode = 1
 
-[node name="PlayerSprite" type="AnimatedSprite2D" parent="TextureRect"]
-position = Vector2(407, 262)
-sprite_frames = SubResource("SpriteFrames_0qh17")
-autoplay = "default"
-
-[node name="FireGoblinSprite" type="AnimatedSprite2D" parent="TextureRect"]
-position = Vector2(1179, 258)
-sprite_frames = SubResource("SpriteFrames_1xtmv")
-autoplay = "default"
-flip_h = true
-
 [node name="Outcome" type="Label" parent="TextureRect"]
-offset_left = 599.0
-offset_top = 213.0
-offset_right = 986.0
-offset_bottom = 282.0
+layout_mode = 0
+offset_left = 451.0
+offset_top = 89.0
+offset_right = 838.0
+offset_bottom = 158.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -185,28 +82,28 @@ alignment = 1
 layout_mode = 2
 size_flags_horizontal = 3
 focus_previous = NodePath(".")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
 theme_override_fonts/font = ExtResource("4_kuoiw")
 theme_override_font_sizes/font_size = 48
-theme_override_styles/focus = ExtResource("5_6g3qy")
-theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_guyg5")
-theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_guyg5")
-theme_override_styles/hover_mirrored = ExtResource("5_6g3qy")
+theme_override_styles/focus = ExtResource("4_37nn7")
+theme_override_styles/hover_pressed_mirrored = ExtResource("4_37nn7")
+theme_override_styles/hover_pressed = ExtResource("4_37nn7")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_6l1co")
 theme_override_styles/hover = ExtResource("5_6g3qy")
-theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_guyg5")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_guyg5")
-theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_guyg5")
-theme_override_styles/normal = SubResource("StyleBoxTexture_guyg5")
+theme_override_styles/pressed_mirrored = ExtResource("4_37nn7")
+theme_override_styles/pressed = ExtResource("4_37nn7")
+theme_override_styles/normal_mirrored = ExtResource("4_37nn7")
+theme_override_styles/normal = ExtResource("4_37nn7")
 text = "Restart"
 
 [node name="MainMenuButton" type="Button" parent="TextureRect/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 focus_previous = NodePath(".")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
 theme_override_fonts/font = ExtResource("4_kuoiw")
 theme_override_font_sizes/font_size = 48
@@ -223,17 +120,18 @@ text = "Main Menu"
 
 [node name="BestClearTime" type="Label" parent="TextureRect"]
 unique_name_in_owner = true
-offset_left = 482.0
-offset_top = 484.0
-offset_right = 1137.0
-offset_bottom = 558.0
+layout_mode = 0
+offset_left = 331.0
+offset_top = 217.0
+offset_right = 986.0
+offset_bottom = 291.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 3
 theme_override_fonts/font = ExtResource("4_kuoiw")
 theme_override_font_sizes/font_size = 50
-text = "Best Clear Time: 0.00 seconds"
+text = "Best Clear Time: 0.00 s"
 horizontal_alignment = 1
 
 [connection signal="pressed" from="TextureRect/MarginContainer/HBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]

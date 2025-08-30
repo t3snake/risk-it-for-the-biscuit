@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://bwm41117lgfug"]
+[gd_scene load_steps=8 format=3 uid="uid://bwm41117lgfug"]
 
 [ext_resource type="PackedScene" uid="uid://dshj44alc06o" path="res://Scenes/main_character.tscn" id="1_vly50"]
 [ext_resource type="MeshLibrary" uid="uid://cd85bn03evw1m" path="res://Models/terain-mesh-library-limited.tres" id="2_vly50"]
 [ext_resource type="PackedScene" uid="uid://d2k8unbyl0i4u" path="res://Scenes/coin.tscn" id="3_c5erv"]
+[ext_resource type="PackedScene" uid="uid://divq1aw52avpc" path="res://Scenes/ui/hud.tscn" id="4_lyd6k"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_c5erv"]
 sky_top_color = Color(0.578216, 0.260534, 0.810664, 1)
@@ -44,10 +45,14 @@ data = {
 metadata/_editor_floor_ = Vector3(0, 1, 0)
 
 [node name="Coin" parent="." instance=ExtResource("3_c5erv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.50129, 1, 8.49374)
+transform = Transform3D(2.01675, 0, -2.22097, 0, 3, 0, 2.22097, 0, 2.01675, -7.50129, 1, 8.49374)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_lyd6k")
+
+[node name="HUD" parent="." instance=ExtResource("4_lyd6k")]
+hint_enabled = true
+hint_text = "Seek the gold biscuit."
 
 [editable path="MainCharacter"]
 [editable path="MainCharacter/CharacterModel"]

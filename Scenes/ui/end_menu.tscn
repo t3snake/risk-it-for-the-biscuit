@@ -1,118 +1,11 @@
-[gd_scene load_steps=24 format=3 uid="uid://ci34hn5wyvjbq"]
+[gd_scene load_steps=9 format=3 uid="uid://bacsxj46dvfla"]
 
-[ext_resource type="Script" uid="uid://coaxh2m1jr8oi" path="res://scripts/ui/end_menu.gd" id="1_sfcoi"]
+[ext_resource type="Script" uid="uid://skak4bakf6ik" path="res://Scripts/ui/end_menu.gd" id="1_jgk52"]
 [ext_resource type="Texture2D" uid="uid://bw3amxscqygqq" path="res://assets/naveena/background_scaled.png" id="1_xhijr"]
-[ext_resource type="Texture2D" uid="uid://bke51fbx1daf7" path="res://assets/TinySword/Warrior_Blue.png" id="2_nvg1v"]
-[ext_resource type="Texture2D" uid="uid://dlk155uraykp2" path="res://assets/TinySword/Torch_Yellow.png" id="3_1lssv"]
 [ext_resource type="FontFile" uid="uid://cfrp63w0hyxlv" path="res://assets/MathewCarter/Charter Regular.ttf" id="4_cxrfc"]
-[ext_resource type="StyleBox" uid="uid://xeu7s8jdw8y2" path="res://resources/button_hover_texture.tres" id="5_ajodo"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_dtbdk"]
-atlas = ExtResource("2_nvg1v")
-region = Rect2(0, 0, 192, 192)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_twacx"]
-atlas = ExtResource("2_nvg1v")
-region = Rect2(192, 0, 192, 192)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8uq0m"]
-atlas = ExtResource("2_nvg1v")
-region = Rect2(384, 0, 192, 192)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8aosx"]
-atlas = ExtResource("2_nvg1v")
-region = Rect2(576, 0, 192, 192)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2wu45"]
-atlas = ExtResource("2_nvg1v")
-region = Rect2(768, 0, 192, 192)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_eefvt"]
-atlas = ExtResource("2_nvg1v")
-region = Rect2(960, 0, 192, 192)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_anbic"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_dtbdk")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_twacx")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8uq0m")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8aosx")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2wu45")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_eefvt")
-}],
-"loop": true,
-"name": &"default",
-"speed": 15.0
-}]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8gtea"]
-atlas = ExtResource("3_1lssv")
-region = Rect2(0, 0, 192, 192)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6muwn"]
-atlas = ExtResource("3_1lssv")
-region = Rect2(192, 0, 192, 192)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_e1lbo"]
-atlas = ExtResource("3_1lssv")
-region = Rect2(384, 0, 192, 192)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_x7yhm"]
-atlas = ExtResource("3_1lssv")
-region = Rect2(576, 0, 192, 192)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1wmyo"]
-atlas = ExtResource("3_1lssv")
-region = Rect2(768, 0, 192, 192)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1h04o"]
-atlas = ExtResource("3_1lssv")
-region = Rect2(960, 0, 192, 192)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4o16h"]
-atlas = ExtResource("3_1lssv")
-region = Rect2(1152, 0, 192, 192)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_ak7m5"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8gtea")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6muwn")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_e1lbo")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_x7yhm")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1wmyo")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1h04o")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4o16h")
-}],
-"loop": true,
-"name": &"default",
-"speed": 15.0
-}]
+[ext_resource type="StyleBox" uid="uid://1lsqtg2a4k5l" path="res://resources/button_hover_texture.tres" id="5_ajodo"]
+[ext_resource type="Texture2D" uid="uid://xwvoenwjx0nj" path="res://assets/TinySword/UI/Button_Blue.png" id="5_jgk52"]
+[ext_resource type="Texture2D" uid="uid://dss4kfchq43cf" path="res://assets/TinySword/UI/Checked_Icon.png" id="6_omusw"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_08fhc"]
 load_path = "res://.godot/imported/Button_Blue_9Slides.png-26b0a6a8988a17ad04510c84eece77e0.ctex"
@@ -127,7 +20,7 @@ axis_stretch_horizontal = 2
 axis_stretch_vertical = 2
 
 [node name="EndMenu" type="CanvasLayer"]
-script = ExtResource("1_sfcoi")
+script = ExtResource("1_jgk52")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 anchors_preset = 15
@@ -138,23 +31,12 @@ grow_vertical = 2
 texture = ExtResource("1_xhijr")
 stretch_mode = 1
 
-[node name="PlayerSprite" type="AnimatedSprite2D" parent="TextureRect"]
-position = Vector2(407, 262)
-sprite_frames = SubResource("SpriteFrames_anbic")
-autoplay = "default"
-
-[node name="FireGoblinSprite" type="AnimatedSprite2D" parent="TextureRect"]
-position = Vector2(1179, 258)
-sprite_frames = SubResource("SpriteFrames_ak7m5")
-autoplay = "default"
-flip_h = true
-
 [node name="Outcome" type="Label" parent="TextureRect"]
 layout_mode = 0
-offset_left = 618.0
-offset_top = 220.0
-offset_right = 1005.0
-offset_bottom = 289.0
+offset_left = 442.0
+offset_top = 59.0
+offset_right = 829.0
+offset_bottom = 128.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -169,7 +51,9 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -239.0
+offset_left = -40.0
+offset_top = -226.0
+offset_right = 40.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/margin_left = 50
@@ -187,8 +71,8 @@ size_flags_horizontal = 3
 focus_neighbor_bottom = NodePath(".")
 focus_next = NodePath(".")
 focus_previous = NodePath(".")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
 theme_override_fonts/font = ExtResource("4_cxrfc")
 theme_override_font_sizes/font_size = 48
@@ -210,8 +94,8 @@ size_flags_horizontal = 3
 focus_neighbor_bottom = NodePath("../NextLevelButton")
 focus_next = NodePath("../NextLevelButton")
 focus_previous = NodePath(".")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
 theme_override_fonts/font = ExtResource("4_cxrfc")
 theme_override_font_sizes/font_size = 48
@@ -232,8 +116,8 @@ size_flags_horizontal = 3
 focus_neighbor_bottom = NodePath("../NextLevelButton")
 focus_next = NodePath("../NextLevelButton")
 focus_previous = NodePath(".")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
 theme_override_fonts/font = ExtResource("4_cxrfc")
 theme_override_font_sizes/font_size = 48
@@ -251,34 +135,64 @@ text = "Main Menu"
 [node name="ClearTime" type="Label" parent="TextureRect"]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 531.0
-offset_top = 406.0
-offset_right = 1081.0
-offset_bottom = 480.0
+offset_left = 352.0
+offset_top = 185.0
+offset_right = 902.0
+offset_bottom = 259.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 3
 theme_override_fonts/font = ExtResource("4_cxrfc")
 theme_override_font_sizes/font_size = 50
-text = "Clear Time: 0.00 seconds"
+text = "Clear Time: 0.00 s"
 horizontal_alignment = 1
 
 [node name="BestClearTime" type="Label" parent="TextureRect"]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 531.0
-offset_top = 476.0
-offset_right = 1081.0
-offset_bottom = 550.0
+offset_left = 354.0
+offset_top = 250.0
+offset_right = 904.0
+offset_bottom = 324.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 3
 theme_override_fonts/font = ExtResource("4_cxrfc")
 theme_override_font_sizes/font_size = 50
-text = "Clear Time: 0.00 seconds"
+text = "Best Time: 0.00 s"
 horizontal_alignment = 1
+
+[node name="MarginContainerTargetTime" type="MarginContainer" parent="TextureRect"]
+layout_mode = 0
+offset_left = 250.0
+offset_top = 328.0
+offset_right = 1074.0
+offset_bottom = 399.0
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_right = 25
+
+[node name="TargetTime" type="Label" parent="TextureRect/MarginContainerTargetTime"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("4_cxrfc")
+theme_override_font_sizes/font_size = 50
+text = "Bonus Target Time: 0.00 s"
+horizontal_alignment = 1
+
+[node name="CheckBox" type="Sprite2D" parent="TextureRect/MarginContainerTargetTime"]
+position = Vector2(81, 44)
+texture = ExtResource("5_jgk52")
+
+[node name="CheckedIcon" type="Sprite2D" parent="TextureRect/MarginContainerTargetTime"]
+unique_name_in_owner = true
+position = Vector2(81, 44)
+texture = ExtResource("6_omusw")
 
 [connection signal="pressed" from="TextureRect/MarginContainer/HBoxContainer/NextLevelButton" to="." method="_on_next_level_button_pressed"]
 [connection signal="pressed" from="TextureRect/MarginContainer/HBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]

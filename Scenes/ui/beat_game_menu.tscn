@@ -1,118 +1,9 @@
-[gd_scene load_steps=24 format=3 uid="uid://brkdvdaevtlpw"]
+[gd_scene load_steps=7 format=3 uid="uid://1y18vd8drkgd"]
 
-[ext_resource type="Script" uid="uid://cyjunblsny6ka" path="res://scripts/ui/beat_game_menu.gd" id="1_24esx"]
+[ext_resource type="Script" uid="uid://c0gifutref77w" path="res://Scripts/ui/beat_game_menu.gd" id="1_7cpgs"]
 [ext_resource type="Texture2D" uid="uid://bw3amxscqygqq" path="res://assets/naveena/background_scaled.png" id="1_qvjnm"]
-[ext_resource type="Texture2D" uid="uid://bke51fbx1daf7" path="res://assets/TinySword/Warrior_Blue.png" id="2_ean86"]
-[ext_resource type="Texture2D" uid="uid://dlk155uraykp2" path="res://assets/TinySword/Torch_Yellow.png" id="3_btiys"]
 [ext_resource type="FontFile" uid="uid://cfrp63w0hyxlv" path="res://assets/MathewCarter/Charter Regular.ttf" id="4_1xsq3"]
-[ext_resource type="StyleBox" uid="uid://xeu7s8jdw8y2" path="res://resources/button_hover_texture.tres" id="5_2jmb5"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_dtbdk"]
-atlas = ExtResource("2_ean86")
-region = Rect2(0, 0, 192, 192)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_twacx"]
-atlas = ExtResource("2_ean86")
-region = Rect2(192, 0, 192, 192)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8uq0m"]
-atlas = ExtResource("2_ean86")
-region = Rect2(384, 0, 192, 192)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8aosx"]
-atlas = ExtResource("2_ean86")
-region = Rect2(576, 0, 192, 192)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2wu45"]
-atlas = ExtResource("2_ean86")
-region = Rect2(768, 0, 192, 192)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_eefvt"]
-atlas = ExtResource("2_ean86")
-region = Rect2(960, 0, 192, 192)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_i2d55"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_dtbdk")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_twacx")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8uq0m")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8aosx")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2wu45")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_eefvt")
-}],
-"loop": true,
-"name": &"default",
-"speed": 15.0
-}]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8gtea"]
-atlas = ExtResource("3_btiys")
-region = Rect2(0, 0, 192, 192)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6muwn"]
-atlas = ExtResource("3_btiys")
-region = Rect2(192, 0, 192, 192)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_e1lbo"]
-atlas = ExtResource("3_btiys")
-region = Rect2(384, 0, 192, 192)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_x7yhm"]
-atlas = ExtResource("3_btiys")
-region = Rect2(576, 0, 192, 192)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1wmyo"]
-atlas = ExtResource("3_btiys")
-region = Rect2(768, 0, 192, 192)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1h04o"]
-atlas = ExtResource("3_btiys")
-region = Rect2(960, 0, 192, 192)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4o16h"]
-atlas = ExtResource("3_btiys")
-region = Rect2(1152, 0, 192, 192)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_8ceex"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8gtea")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6muwn")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_e1lbo")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_x7yhm")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1wmyo")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1h04o")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4o16h")
-}],
-"loop": true,
-"name": &"default",
-"speed": 15.0
-}]
+[ext_resource type="StyleBox" uid="uid://1lsqtg2a4k5l" path="res://resources/button_hover_texture.tres" id="5_2jmb5"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_v03i4"]
 load_path = "res://.godot/imported/Button_Blue_9Slides.png-26b0a6a8988a17ad04510c84eece77e0.ctex"
@@ -127,7 +18,7 @@ axis_stretch_horizontal = 2
 axis_stretch_vertical = 2
 
 [node name="BeatGameMenu" type="CanvasLayer"]
-script = ExtResource("1_24esx")
+script = ExtResource("1_7cpgs")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 anchors_preset = 15
@@ -138,22 +29,19 @@ grow_vertical = 2
 texture = ExtResource("1_qvjnm")
 stretch_mode = 1
 
-[node name="PlayerSprite" type="AnimatedSprite2D" parent="TextureRect"]
-position = Vector2(407, 262)
-sprite_frames = SubResource("SpriteFrames_i2d55")
-autoplay = "default"
-
-[node name="FireGoblinSprite" type="AnimatedSprite2D" parent="TextureRect"]
-position = Vector2(1179, 258)
-sprite_frames = SubResource("SpriteFrames_8ceex")
-autoplay = "default"
-flip_h = true
-
 [node name="Outcome" type="Label" parent="TextureRect"]
-offset_left = 599.0
-offset_top = 213.0
-offset_right = 1019.0
-offset_bottom = 352.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.286
+anchor_right = 0.5
+anchor_bottom = 0.286
+offset_left = -352.0
+offset_top = -61.92
+offset_right = 371.0
+offset_bottom = 79.08
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -186,8 +74,8 @@ alignment = 1
 layout_mode = 2
 size_flags_horizontal = 3
 focus_previous = NodePath(".")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
 theme_override_fonts/font = ExtResource("4_1xsq3")
 theme_override_font_sizes/font_size = 48
