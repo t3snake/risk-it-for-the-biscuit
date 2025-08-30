@@ -3,13 +3,16 @@ extends Node
 var timer: float
 var is_timer_active: bool
 
-var total_levels: int = 3
+# global state
+var total_levels: int = 6
 var levels_cleared: int
-var current_level: int
-
-var is_current_level_cleared : bool
-
+# TODO this could be array since key is level
 var highscore_map: Dictionary
+var time_to_beat_map: Array  # in seconds
+
+# current state
+var current_level: int
+var is_current_level_cleared : bool
 
 var kbm_active: bool
 
@@ -19,6 +22,7 @@ func _ready() -> void:
 	is_timer_active = false
 	
 	highscore_map = {}
+	time_to_beat_map = []
 	for lvl in range(total_levels):
 		highscore_map[lvl] = 0
 
@@ -30,18 +34,30 @@ func init_level(level: int) -> void:
 	
 	is_current_level_cleared = false
 
-func set_level_cleared(level: int) -> void:
-	if level > levels_cleared:
-		levels_cleared = level
+func set_level_cleared() -> void:
+	if current_level > levels_cleared:
+		levels_cleared = current_level
 	
 	is_current_level_cleared = true
 	
-	if highscore_map[level - 1] == 0:
-		highscore_map[level - 1] = timer
-	elif timer < highscore_map[level - 1]:
-		highscore_map[level - 1] = timer
+	if highscore_map[current_level - 1] == 0:
+		highscore_map[current_level - 1] = timer
+	elif timer < highscore_map[current_level - 1]:
+		highscore_map[current_level - 1] = timer
 	
 	timer = 0
+	
+func go_to_next_level() -> void:
+	if current_level < total_levels:
+		get_tree().change_scene_to_file(
+			"res://Scenes/level%d.tscn" % (current_level + 1)
+		)
+	else:
+		# TODO no more levels scenario
+		pass
+		
+func restart_level() -> void:
+	get_tree().reload_current_scene()
 
 func _process(delta: float) -> void:
 	if is_timer_active:

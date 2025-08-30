@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Risk it for the Biscuit"
-run/main_scene="uid://cv40k2ko0sdwm"
+run/main_scene="uid://bwm41117lgfug"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 

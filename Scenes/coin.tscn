@@ -7,12 +7,14 @@
 size = Vector3(0.55191, 0.603943, 0.201721)
 
 [node name="Coin" type="Node3D"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 script = ExtResource("1_jgi06")
 
 [node name="CoinScene" parent="." instance=ExtResource("1_2qo34")]
 transform = Transform3D(1.32919, 0, 0, 0, 1.31215, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="Area3D" type="Area3D" parent="."]
+collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00474548, 0.267242, 0.00131226)

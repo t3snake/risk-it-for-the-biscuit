@@ -1,0 +1,129 @@
+[gd_scene load_steps=6 format=3 uid="uid://e1wmunwb55ho"]
+
+[ext_resource type="Script" uid="uid://gw61hnaln4p6" path="res://scripts/ui/pause_menu.gd" id="1_7n8f4"]
+[ext_resource type="StyleBox" uid="uid://xeu7s8jdw8y2" path="res://resources/button_hover_texture.tres" id="2_ksakj"]
+[ext_resource type="FontFile" uid="uid://cfrp63w0hyxlv" path="res://assets/MathewCarter/Charter Regular.ttf" id="2_sasqj"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3r5so"]
+load_path = "res://.godot/imported/Button_Blue_9Slides.png-26b0a6a8988a17ad04510c84eece77e0.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5eo1c"]
+texture = SubResource("CompressedTexture2D_3r5so")
+texture_margin_left = 64.0
+texture_margin_top = 64.0
+texture_margin_right = 64.0
+texture_margin_bottom = 64.0
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[node name="PauseMenu" type="CanvasLayer"]
+layer = 6
+script = ExtResource("1_7n8f4")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 200
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 200
+theme_override_constants/margin_bottom = 50
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer"]
+layout_mode = 2
+color = Color(0, 0, 0, 0.666667)
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 200
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 200
+theme_override_constants/margin_bottom = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/ColorRect/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 32
+alignment = 1
+
+[node name="ResumeButton" type="Button" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+focus_neighbor_bottom = NodePath("../RestartButton")
+focus_next = NodePath("../RestartButton")
+focus_previous = NodePath(".")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("2_sasqj")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/focus = ExtResource("2_ksakj")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_5eo1c")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_5eo1c")
+theme_override_styles/hover_mirrored = ExtResource("2_ksakj")
+theme_override_styles/hover = ExtResource("2_ksakj")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_5eo1c")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_5eo1c")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_5eo1c")
+theme_override_styles/normal = SubResource("StyleBoxTexture_5eo1c")
+text = "Resume
+"
+
+[node name="RestartButton" type="Button" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+focus_neighbor_bottom = NodePath("../RestartButton")
+focus_next = NodePath("../RestartButton")
+focus_previous = NodePath(".")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("2_sasqj")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/focus = ExtResource("2_ksakj")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_5eo1c")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_5eo1c")
+theme_override_styles/hover_mirrored = ExtResource("2_ksakj")
+theme_override_styles/hover = ExtResource("2_ksakj")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_5eo1c")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_5eo1c")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_5eo1c")
+theme_override_styles/normal = SubResource("StyleBoxTexture_5eo1c")
+text = "Restart
+"
+
+[node name="MainMenuButton" type="Button" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+focus_neighbor_bottom = NodePath("../RestartButton")
+focus_next = NodePath("../RestartButton")
+focus_previous = NodePath(".")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("2_sasqj")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/focus = ExtResource("2_ksakj")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_5eo1c")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_5eo1c")
+theme_override_styles/hover_mirrored = ExtResource("2_ksakj")
+theme_override_styles/hover = ExtResource("2_ksakj")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_5eo1c")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_5eo1c")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_5eo1c")
+theme_override_styles/normal = SubResource("StyleBoxTexture_5eo1c")
+text = "Main Menu
+"
+
+[connection signal="pressed" from="MarginContainer/ColorRect/MarginContainer/VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="MarginContainer/ColorRect/MarginContainer/VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="MarginContainer/ColorRect/MarginContainer/VBoxContainer/MainMenuButton" to="." method="_on_main_menu_button_pressed"]

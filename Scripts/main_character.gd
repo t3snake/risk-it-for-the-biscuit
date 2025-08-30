@@ -3,10 +3,12 @@ extends CharacterBody3D
 class_name MainCharacter
 
 # references
-@onready var spring_arm = $SpringArm3D # camera arm
+@onready var spring_arm = $SpringArm3D  # camera arm
 @onready var camera = $SpringArm3D/Camera3D
 @onready var anim_player = $CharacterModel/AnimationPlayer
 @onready var model = $CharacterModel
+
+@export var current_level: int
 
 # editor exported state
 @export_group("Player Parameters")
@@ -38,14 +40,14 @@ var jump_state : JumpState
 
 var is_running : bool
 var is_jumping : bool
-var is_falling : bool # to play fall animation after jump
+var is_falling : bool  # to play fall animation after jump
 var is_diving : bool
-var dive_direction_y = 0.0 # to save direction on diving to lerp to later
+var dive_direction_y = 0.0  # to save direction on diving to lerp to later
 
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity") * 3
 
 func _ready() -> void:
-	#GlobalState.initialize_level()
+	GlobalState.init_level(current_level)
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	
 	jump_state = JumpState.NORMAL_JUMP
@@ -57,6 +59,8 @@ func _ready() -> void:
 	is_jumping = false
 
 func _physics_process(delta):
+	check_level_beaten()
+	
 	if global_position.y < killzone_y:
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		game_over()
@@ -204,7 +208,12 @@ func register_hit() -> void:
 		#var dir = body.global_position - self.global_position
 		#body.register_hit(Vector2(dir.x, dir.z))
 
+func check_level_beaten() -> void:
+	if GlobalState.is_current_level_cleared:
+		await get_tree().create_timer(0.5).timeout
+		GlobalState.go_to_next_level()
+
 func game_over() -> void:
 	spring_arm.top_level = true;
 	await get_tree().create_timer(1).timeout
-	get_tree().change_scene_to_file("res://Scenes/world.tscn")
+	GlobalState.restart_level()
