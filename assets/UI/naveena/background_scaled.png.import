@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b1jywx1crpjms"
-path="res://.godot/imported/Naveena-border-unit.png-57ebc47cbb3380b3844f5744d36651ba.ctex"
+uid="uid://bw3amxscqygqq"
+path="res://.godot/imported/background_scaled.png-bd5660c840695d6756fc17fe30f48fe7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/naveena/Naveena-border-unit.png"
-dest_files=["res://.godot/imported/Naveena-border-unit.png-57ebc47cbb3380b3844f5744d36651ba.ctex"]
+source_file="res://assets/UI/naveena/background_scaled.png"
+dest_files=["res://.godot/imported/background_scaled.png-bd5660c840695d6756fc17fe30f48fe7.ctex"]
 
 [params]
 

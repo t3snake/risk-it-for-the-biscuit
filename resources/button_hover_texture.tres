@@ -1,6 +1,6 @@
 [gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://1lsqtg2a4k5l"]
 
-[ext_resource type="Texture2D" uid="uid://bdlftcxpln1wf" path="res://assets/TinySword/UI/Button_Blue_9Slides_Pressed.png" id="1_r1eqo"]
+[ext_resource type="Texture2D" uid="uid://bdlftcxpln1wf" path="res://assets/UI/TinySword/UI/Button_Blue_9Slides_Pressed.png" id="1_r1eqo"]
 
 [resource]
 content_margin_left = 64.0

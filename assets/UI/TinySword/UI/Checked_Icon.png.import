@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://6pgts4fu8sv3"
-path="res://.godot/imported/Button_Blue_9Slides.png-26b0a6a8988a17ad04510c84eece77e0.ctex"
+uid="uid://dss4kfchq43cf"
+path="res://.godot/imported/Checked_Icon.png-a6e863a9cbf3845f564377e9825ec572.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/TinySword/UI/Button_Blue_9Slides.png"
-dest_files=["res://.godot/imported/Button_Blue_9Slides.png-26b0a6a8988a17ad04510c84eece77e0.ctex"]
+source_file="res://assets/UI/TinySword/UI/Checked_Icon.png"
+dest_files=["res://.godot/imported/Checked_Icon.png-a6e863a9cbf3845f564377e9825ec572.ctex"]
 
 [params]
 

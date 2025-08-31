@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://c4c2sowd24wio"]
 
 [ext_resource type="Script" uid="uid://c3bvw14hke2n2" path="res://Scripts/ui/main_menu.gd" id="1_baxwh"]
-[ext_resource type="Texture2D" uid="uid://bw3amxscqygqq" path="res://assets/naveena/background_scaled.png" id="2_0sifs"]
-[ext_resource type="FontFile" uid="uid://cfrp63w0hyxlv" path="res://assets/MathewCarter/Charter Regular.ttf" id="3_vmm6a"]
+[ext_resource type="Texture2D" uid="uid://bw3amxscqygqq" path="res://assets/UI/naveena/background_scaled.png" id="2_0sifs"]
+[ext_resource type="FontFile" uid="uid://cfrp63w0hyxlv" path="res://assets/Font/MathewCarter/Charter Regular.ttf" id="3_vmm6a"]
 [ext_resource type="StyleBox" uid="uid://1lsqtg2a4k5l" path="res://resources/button_hover_texture.tres" id="4_82f1l"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_bh31a"]

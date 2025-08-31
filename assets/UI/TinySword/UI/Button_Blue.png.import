@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bdlftcxpln1wf"
-path="res://.godot/imported/Button_Blue_9Slides_Pressed.png-975226d845b60d21065b5a3a69cf2ee6.ctex"
+uid="uid://xwvoenwjx0nj"
+path="res://.godot/imported/Button_Blue.png-0d7a004e4ff446b38b2d65b57b7ed21a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/TinySword/UI/Button_Blue_9Slides_Pressed.png"
-dest_files=["res://.godot/imported/Button_Blue_9Slides_Pressed.png-975226d845b60d21065b5a3a69cf2ee6.ctex"]
+source_file="res://assets/UI/TinySword/UI/Button_Blue.png"
+dest_files=["res://.godot/imported/Button_Blue.png-0d7a004e4ff446b38b2d65b57b7ed21a.ctex"]
 
 [params]
 

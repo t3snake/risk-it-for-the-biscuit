@@ -1,11 +1,11 @@
 [gd_scene load_steps=9 format=3 uid="uid://bacsxj46dvfla"]
 
 [ext_resource type="Script" uid="uid://skak4bakf6ik" path="res://Scripts/ui/end_menu.gd" id="1_jgk52"]
-[ext_resource type="Texture2D" uid="uid://bw3amxscqygqq" path="res://assets/naveena/background_scaled.png" id="1_xhijr"]
-[ext_resource type="FontFile" uid="uid://cfrp63w0hyxlv" path="res://assets/MathewCarter/Charter Regular.ttf" id="4_cxrfc"]
+[ext_resource type="Texture2D" uid="uid://bw3amxscqygqq" path="res://assets/UI/naveena/background_scaled.png" id="1_xhijr"]
+[ext_resource type="FontFile" uid="uid://cfrp63w0hyxlv" path="res://assets/Font/MathewCarter/Charter Regular.ttf" id="4_cxrfc"]
 [ext_resource type="StyleBox" uid="uid://1lsqtg2a4k5l" path="res://resources/button_hover_texture.tres" id="5_ajodo"]
-[ext_resource type="Texture2D" uid="uid://xwvoenwjx0nj" path="res://assets/TinySword/UI/Button_Blue.png" id="5_jgk52"]
-[ext_resource type="Texture2D" uid="uid://dss4kfchq43cf" path="res://assets/TinySword/UI/Checked_Icon.png" id="6_omusw"]
+[ext_resource type="Texture2D" uid="uid://xwvoenwjx0nj" path="res://assets/UI/TinySword/UI/Button_Blue.png" id="5_jgk52"]
+[ext_resource type="Texture2D" uid="uid://dss4kfchq43cf" path="res://assets/UI/TinySword/UI/Checked_Icon.png" id="6_omusw"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_08fhc"]
 load_path = "res://.godot/imported/Button_Blue_9Slides.png-26b0a6a8988a17ad04510c84eece77e0.ctex"

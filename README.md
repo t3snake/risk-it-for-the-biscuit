@@ -14,6 +14,7 @@ Web Build Hosted
 - [Platformer kit by Kenney](https://kenney.nl/assets/platformer-kit)  
 - [Tiny Swords (Only for UI) by Pixelfrog](https://pixelfrog-assets.itch.io/tiny-swords) (old version with CC0)  
 - [Charter font by Mathew Carter](https://practicaltypography.com/charter.html)  
+- [Sounds from Halftone by VOiD1](https://void1gaming.itch.io/halftone-sound-effects-pack-lite)  
 
 ### Not used anymore
 - [3D Leap Land by Essssam](https://essssam.itch.io/3d-leap-land)  

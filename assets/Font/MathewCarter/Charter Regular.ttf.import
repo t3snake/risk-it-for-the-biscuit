@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://cfrp63w0hyxlv"
-path="res://.godot/imported/Charter Regular.ttf-30e779dd509b356d7c26417ee3c31a84.fontdata"
+path="res://.godot/imported/Charter Regular.ttf-dfb44dde719970258897a8a987822a30.fontdata"
 
 [deps]
 
-source_file="res://assets/MathewCarter/Charter Regular.ttf"
-dest_files=["res://.godot/imported/Charter Regular.ttf-30e779dd509b356d7c26417ee3c31a84.fontdata"]
+source_file="res://assets/Font/MathewCarter/Charter Regular.ttf"
+dest_files=["res://.godot/imported/Charter Regular.ttf-dfb44dde719970258897a8a987822a30.fontdata"]
 
 [params]
 

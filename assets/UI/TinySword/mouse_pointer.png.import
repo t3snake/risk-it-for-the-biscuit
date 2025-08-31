@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dss4kfchq43cf"
-path="res://.godot/imported/Checked_Icon.png-d7cb5ffa13d8ff48a523a27a07f70665.ctex"
+uid="uid://ckuj4fc7yo0c8"
+path="res://.godot/imported/mouse_pointer.png-a65a82e5ad1976e756b6fbfe309040cc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/TinySword/UI/Checked_Icon.png"
-dest_files=["res://.godot/imported/Checked_Icon.png-d7cb5ffa13d8ff48a523a27a07f70665.ctex"]
+source_file="res://assets/UI/TinySword/mouse_pointer.png"
+dest_files=["res://.godot/imported/mouse_pointer.png-a65a82e5ad1976e756b6fbfe309040cc.ctex"]
 
 [params]
 

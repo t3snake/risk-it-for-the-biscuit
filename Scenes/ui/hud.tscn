@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://divq1aw52avpc"]
 
-[ext_resource type="Texture2D" uid="uid://bw3amxscqygqq" path="res://assets/naveena/background_scaled.png" id="1_13sth"]
+[ext_resource type="Texture2D" uid="uid://bw3amxscqygqq" path="res://assets/UI/naveena/background_scaled.png" id="1_13sth"]
 [ext_resource type="Script" uid="uid://c1gdpvs1wncp" path="res://Scripts/ui/hud.gd" id="1_kpdpg"]
-[ext_resource type="FontFile" uid="uid://cfrp63w0hyxlv" path="res://assets/MathewCarter/Charter Regular.ttf" id="2_wecwr"]
+[ext_resource type="FontFile" uid="uid://cfrp63w0hyxlv" path="res://assets/Font/MathewCarter/Charter Regular.ttf" id="2_wecwr"]
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_kpdpg")

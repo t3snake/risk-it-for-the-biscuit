@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://cxtx4wb85tc01"]
+[gd_scene load_steps=8 format=3 uid="uid://cxtx4wb85tc01"]
 
 [ext_resource type="PackedScene" uid="uid://dshj44alc06o" path="res://Scenes/main_character.tscn" id="1_125c2"]
 [ext_resource type="MeshLibrary" uid="uid://cd85bn03evw1m" path="res://Models/terain-mesh-library-limited.tres" id="2_2k2h5"]
 [ext_resource type="PackedScene" uid="uid://d2k8unbyl0i4u" path="res://Scenes/coin.tscn" id="3_x5oe7"]
+[ext_resource type="PackedScene" uid="uid://cphjs7a13ihnq" path="res://Scenes/Spikes.tscn" id="4_2k2h5"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_yp4wr"]
 sky_top_color = Color(0.578216, 0.260534, 0.810664, 1)
@@ -48,6 +49,9 @@ metadata/_editor_floor_ = Vector3(0, 1, 0)
 
 [node name="Coin" parent="." instance=ExtResource("3_x5oe7")]
 transform = Transform3D(0.664748, 0, -0.747068, 0, 1, 0, 0.747068, 0, 0.664748, -7.44481, 1.07116, -5.07016)
+
+[node name="SpikeBlock" parent="." instance=ExtResource("4_2k2h5")]
+transform = Transform3D(0.000174479, 0, 1, 0, 1, 0, -1, 0, 0.000174479, 12.143, 1.26457, -4.97567)
 
 [editable path="MainCharacter"]
 [editable path="MainCharacter/CharacterModel"]

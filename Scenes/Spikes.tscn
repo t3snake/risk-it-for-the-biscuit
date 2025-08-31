@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://cphjs7a13ihnq"]
+
+[ext_resource type="Script" uid="uid://rxqnla70pciq" path="res://Scripts/spikes.gd" id="1_1ngkn"]
+[ext_resource type="PackedScene" uid="uid://bach7k1g5avlk" path="res://Models/Terrain/spike-block-wide.glb" id="1_c3wpg"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vo256"]
+size = Vector3(1.83936, 0.490173, 0.538696)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_1ngkn"]
+points = PackedVector3Array(0.761785, 0.983333, 0.0261606, 0.871429, 0.725, 0.225, 0.79997, 0.450089, -0.469048, -0.761785, 0.983333, -0.0118749, -0.761785, 0.488125, 0.483333, 0.79997, 0.0309524, -0.0499105, -0.79997, 0.450089, -0.469048, 0.761785, 0.488125, 0.483333, -0.79997, 0.0309524, -0.0499105, -1.17453, 0.525376, 0.0254662, 1.17453, 0.525376, 0.0254662, -0.761785, 0.526067, 0.483333, 0.969212, 0.704569, -0.226219, 0.727077, 0.524343, -0.425657, -0.969212, 0.704569, -0.226219, -0.969212, 0.273781, 0.204569, 0.969212, 0.273781, 0.204569, -0.72694, 0.0744245, 0.0244245, -0.761785, 0.983333, 0.0261606, 0.761785, 0.983333, -0.0118749, 0.761785, 0.526067, 0.483333, 0.954598, 0.277299, -0.222701, -0.954598, 0.277299, -0.222701, -0.727077, 0.524343, -0.425657, 0.72694, 0.0744245, 0.0244245, -1.15317, 0.453173, -0.0468275, 1.15317, 0.453173, -0.0468275, -0.871429, 0.725, 0.225, -1.15317, 0.453173, 0.0251329, 1.15317, 0.453173, 0.0251329, -1.15317, 0.525045, -0.0468275, 1.15317, 0.525045, -0.0468275)
+
+[node name="SpikeBlock" type="Node3D"]
+script = ExtResource("1_1ngkn")
+
+[node name="spike-block-wide2" parent="." instance=ExtResource("1_c3wpg")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="spike-block-wide2/spike-block-wide" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="spike-block-wide2/spike-block-wide/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0197754, 0.468353, -0.0055542)
+shape = SubResource("BoxShape3D_vo256")
+
+[node name="SpikeArea" type="Area3D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpikeArea"]
+shape = SubResource("ConvexPolygonShape3D_1ngkn")
+
+[connection signal="body_entered" from="SpikeArea" to="." method="_on_spike_area_body_entered"]
+
+[editable path="spike-block-wide2"]

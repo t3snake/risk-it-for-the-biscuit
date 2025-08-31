@@ -8,6 +8,11 @@ class_name MainCharacter
 @onready var anim_player = $CharacterModel/AnimationPlayer
 @onready var model = $CharacterModel
 
+@onready var footstep_player = %Footsteps
+@onready var jump_player = %Jump
+@onready var gold_collect_player = %GoldCollected
+@onready var death_player = %Death
+
 @export var current_level: int
 
 # editor exported state
@@ -30,7 +35,7 @@ class_name MainCharacter
 @export_group("Debug")
 @export var show_debug_info = true
 
-enum CharacterState { IDLE, WALK, RUN, JUMP, FALL, DIVE }
+enum CharacterState { IDLE, WALK, RUN, JUMP, FALL, DIVE, DEAD }
 enum JumpState { LONG_JUMP, NORMAL_JUMP, BACKFLIP }
 
 # state
@@ -42,6 +47,7 @@ var is_running : bool
 var is_jumping : bool
 var is_falling : bool  # to play fall animation after jump
 var is_diving : bool
+var is_dead : bool
 var dive_direction_y = 0.0  # to save direction on diving to lerp to later
 
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity") * 3
@@ -56,6 +62,7 @@ func _ready() -> void:
 	is_diving = false
 	is_falling = false
 	is_jumping = false
+	is_dead = false
 	
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
@@ -120,6 +127,7 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("jump"):
 		if !is_jumping and is_on_floor():
 			is_jumping = true
+			jump_player.play()
 			if is_running:
 				# long jump
 				velocity.y = long_jump_vert_speed
@@ -130,6 +138,7 @@ func _input(event: InputEvent) -> void:
 				jump_state = JumpState.NORMAL_JUMP
 		elif (is_jumping and !is_diving) or (is_falling and !is_diving):
 			is_diving = true
+			jump_player.play()
 			var dive_velocity = get_dive_velocity()
 			# if dive in the opposite direction, the magnitude is same as initial jump
 			# if in same direction, the magnitude increases by 50%
@@ -166,7 +175,9 @@ func set_character_state():
 		is_falling = false
 		is_diving = false
 	
-	if is_diving:
+	if is_dead:
+		character_state = CharacterState.DEAD
+	elif is_diving:
 		character_state = CharacterState.DIVE
 	elif is_falling:
 		character_state = CharacterState.FALL
@@ -193,6 +204,8 @@ func handle_animation():
 			play_animation("fall")
 		CharacterState.DIVE:
 			play_animation("drive")
+		CharacterState.DEAD:
+			play_animation("die")
 
 func play_animation(anim_name: String) -> void:
 	if anim_player.is_playing() and anim_player.current_animation == anim_name:
@@ -200,23 +213,28 @@ func play_animation(anim_name: String) -> void:
 	
 	anim_player.play(anim_name)
 
-func register_hit() -> void:
-	# TODO death? health?
-	pass
+func die() -> void:
+	is_dead = true
 
-#func _on_hit_area_body_entered(body: Node3D) -> void:
-	#if body is Zombie:
-		#var dir = body.global_position - self.global_position
-		#body.register_hit(Vector2(dir.x, dir.z))
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	if anim_name == "die":
+		get_tree().change_scene_to_file("res://Scenes/ui/died_menu.tscn")
+
+func play_footstep() -> void:
+	footstep_player.play()
 
 func check_level_beaten() -> void:
 	if GlobalState.is_current_level_cleared:
 		GlobalState.stop_timer()
+		gold_collect_player.play()
 		set_physics_process(false)
 		await get_tree().create_timer(0.5).timeout
 		get_tree().change_scene_to_file("res://Scenes/ui/end_menu.tscn")
 
 func game_over() -> void:
+	if !death_player.is_playing():
+		death_player.play(0.57)
 	spring_arm.top_level = true;
+	GlobalState.stop_timer()
 	await get_tree().create_timer(1).timeout
 	get_tree().change_scene_to_file("res://Scenes/ui/died_menu.tscn")
