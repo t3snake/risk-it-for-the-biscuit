@@ -4,7 +4,7 @@ var timer: float
 var is_timer_active: bool
 
 # global state
-var total_levels: int = 4
+var total_levels: int = 6
 var levels_cleared: int
 # TODO this could be array since key is level
 var highscore_map: Dictionary
@@ -22,7 +22,7 @@ func _ready() -> void:
 	is_timer_active = false
 	
 	highscore_map = {}
-	bonus_time_map = [3, 3, 3, 5]
+	bonus_time_map = [3, 3, 3, 4, 4, 5]
 	for lvl in range(total_levels):
 		highscore_map[lvl] = 0
 

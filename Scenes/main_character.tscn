@@ -333,7 +333,7 @@ tracks/11/path = NodePath("..")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
-"times": PackedFloat32Array(0.3, 0.6),
+"times": PackedFloat32Array(0, 0.3),
 "transitions": PackedFloat32Array(1, 1),
 "values": [{
 "args": [],
@@ -432,7 +432,7 @@ tracks/11/path = NodePath("..")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
-"times": PackedFloat32Array(0.266667, 0.5),
+"times": PackedFloat32Array(0, 0.266667),
 "transitions": PackedFloat32Array(1, 1),
 "values": [{
 "args": [],
@@ -2846,25 +2846,24 @@ margin = 0.1
 
 [node name="Camera3D" type="Camera3D" parent="SpringArm3D"]
 
-[node name="Sounds" type="Node" parent="SpringArm3D"]
+[node name="Sounds" type="Node" parent="."]
 
-[node name="Footsteps" type="AudioStreamPlayer3D" parent="SpringArm3D/Sounds"]
+[node name="Footsteps" type="AudioStreamPlayer3D" parent="Sounds"]
 unique_name_in_owner = true
 stream = SubResource("AudioStreamRandomizer_fsers")
 doppler_tracking = 2
 
-[node name="Jump" type="AudioStreamPlayer3D" parent="SpringArm3D/Sounds"]
+[node name="Jump" type="AudioStreamPlayer3D" parent="Sounds"]
 unique_name_in_owner = true
 stream = ExtResource("8_1fj1i")
 
-[node name="GoldCollected" type="AudioStreamPlayer3D" parent="SpringArm3D/Sounds"]
+[node name="GoldCollected" type="AudioStreamPlayer3D" parent="Sounds"]
 unique_name_in_owner = true
 stream = ExtResource("3_auhcp")
 
-[node name="Death" type="AudioStreamPlayer3D" parent="SpringArm3D/Sounds"]
+[node name="Death" type="AudioStreamPlayer3D" parent="Sounds"]
 unique_name_in_owner = true
 stream = ExtResource("10_esnnb")
-attenuation_model = 2
-volume_db = 2.857
+volume_db = 5.862
 
 [connection signal="animation_finished" from="CharacterModel/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

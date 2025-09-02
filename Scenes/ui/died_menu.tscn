@@ -1,37 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://c7rci0gelfvjr"]
+[gd_scene load_steps=6 format=3 uid="uid://c7rci0gelfvjr"]
 
 [ext_resource type="Texture2D" uid="uid://bw3amxscqygqq" path="res://assets/UI/naveena/background_scaled.png" id="1_a2k7q"]
 [ext_resource type="Script" uid="uid://brpr717d0d6yg" path="res://Scripts/ui/died_menu.gd" id="1_uwx80"]
 [ext_resource type="StyleBox" uid="uid://d1d80l7b6kqnf" path="res://resources/button_texture.tres" id="4_37nn7"]
 [ext_resource type="FontFile" uid="uid://cfrp63w0hyxlv" path="res://assets/Font/MathewCarter/Charter Regular.ttf" id="4_kuoiw"]
 [ext_resource type="StyleBox" uid="uid://1lsqtg2a4k5l" path="res://resources/button_hover_texture.tres" id="5_6g3qy"]
-[ext_resource type="Texture2D" uid="uid://bdlftcxpln1wf" path="res://assets/UI/TinySword/UI/Button_Blue_9Slides_Pressed.png" id="5_v7v7b"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6l1co"]
-content_margin_left = 64.0
-content_margin_top = 64.0
-content_margin_right = 64.0
-content_margin_bottom = 64.0
-texture = ExtResource("5_v7v7b")
-texture_margin_left = 64.0
-texture_margin_top = 64.0
-texture_margin_right = 64.0
-texture_margin_bottom = 64.0
-axis_stretch_horizontal = 2
-axis_stretch_vertical = 2
-region_rect = Rect2(0, 0, 192, 192)
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_k11pl"]
-load_path = "res://.godot/imported/Button_Blue_9Slides.png-26b0a6a8988a17ad04510c84eece77e0.ctex"
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_guyg5"]
-texture = SubResource("CompressedTexture2D_k11pl")
-texture_margin_left = 64.0
-texture_margin_top = 64.0
-texture_margin_right = 64.0
-texture_margin_bottom = 64.0
-axis_stretch_horizontal = 2
-axis_stretch_vertical = 2
 
 [node name="DiedMenu" type="CanvasLayer"]
 script = ExtResource("1_uwx80")
@@ -90,7 +63,7 @@ theme_override_font_sizes/font_size = 48
 theme_override_styles/focus = ExtResource("4_37nn7")
 theme_override_styles/hover_pressed_mirrored = ExtResource("4_37nn7")
 theme_override_styles/hover_pressed = ExtResource("4_37nn7")
-theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_6l1co")
+theme_override_styles/hover_mirrored = ExtResource("5_6g3qy")
 theme_override_styles/hover = ExtResource("5_6g3qy")
 theme_override_styles/pressed_mirrored = ExtResource("4_37nn7")
 theme_override_styles/pressed = ExtResource("4_37nn7")
@@ -108,14 +81,14 @@ theme_override_constants/outline_size = 1
 theme_override_fonts/font = ExtResource("4_kuoiw")
 theme_override_font_sizes/font_size = 48
 theme_override_styles/focus = ExtResource("5_6g3qy")
-theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_guyg5")
-theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_guyg5")
+theme_override_styles/hover_pressed_mirrored = ExtResource("4_37nn7")
+theme_override_styles/hover_pressed = ExtResource("4_37nn7")
 theme_override_styles/hover_mirrored = ExtResource("5_6g3qy")
 theme_override_styles/hover = ExtResource("5_6g3qy")
-theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_guyg5")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_guyg5")
-theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_guyg5")
-theme_override_styles/normal = SubResource("StyleBoxTexture_guyg5")
+theme_override_styles/pressed_mirrored = ExtResource("4_37nn7")
+theme_override_styles/pressed = ExtResource("4_37nn7")
+theme_override_styles/normal_mirrored = ExtResource("4_37nn7")
+theme_override_styles/normal = ExtResource("4_37nn7")
 text = "Main Menu"
 
 [node name="BestClearTime" type="Label" parent="TextureRect"]

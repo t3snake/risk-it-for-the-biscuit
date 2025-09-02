@@ -1,21 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://dm8h8007tfulr"]
+[gd_scene load_steps=6 format=3 uid="uid://dm8h8007tfulr"]
 
 [ext_resource type="Texture2D" uid="uid://bw3amxscqygqq" path="res://assets/UI/naveena/background_scaled.png" id="1_il4hu"]
 [ext_resource type="Script" uid="uid://ddq7k1fc522t4" path="res://Scripts/ui/level_select_menu.gd" id="1_ujjhf"]
 [ext_resource type="FontFile" uid="uid://cfrp63w0hyxlv" path="res://assets/Font/MathewCarter/Charter Regular.ttf" id="4_xfq8v"]
+[ext_resource type="StyleBox" uid="uid://d1d80l7b6kqnf" path="res://resources/button_texture.tres" id="5_dmd7t"]
 [ext_resource type="StyleBox" uid="uid://1lsqtg2a4k5l" path="res://resources/button_hover_texture.tres" id="5_frwud"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_rk4tp"]
-load_path = "res://.godot/imported/Button_Blue_9Slides.png-26b0a6a8988a17ad04510c84eece77e0.ctex"
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lk0on"]
-texture = SubResource("CompressedTexture2D_rk4tp")
-texture_margin_left = 64.0
-texture_margin_top = 64.0
-texture_margin_right = 64.0
-texture_margin_bottom = 64.0
-axis_stretch_horizontal = 2
-axis_stretch_vertical = 2
 
 [node name="LevelSelectMenu" type="CanvasLayer"]
 script = ExtResource("1_ujjhf")
@@ -78,14 +67,14 @@ theme_override_constants/outline_size = 1
 theme_override_fonts/font = ExtResource("4_xfq8v")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/focus = ExtResource("5_frwud")
-theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_lk0on")
-theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_lk0on")
+theme_override_styles/hover_pressed_mirrored = ExtResource("5_dmd7t")
+theme_override_styles/hover_pressed = ExtResource("5_dmd7t")
 theme_override_styles/hover_mirrored = ExtResource("5_frwud")
 theme_override_styles/hover = ExtResource("5_frwud")
-theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_lk0on")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_lk0on")
-theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_lk0on")
-theme_override_styles/normal = SubResource("StyleBoxTexture_lk0on")
+theme_override_styles/pressed_mirrored = ExtResource("5_dmd7t")
+theme_override_styles/pressed = ExtResource("5_dmd7t")
+theme_override_styles/normal_mirrored = ExtResource("5_dmd7t")
+theme_override_styles/normal = ExtResource("5_dmd7t")
 text = "Level 1
 "
 
@@ -101,14 +90,14 @@ theme_override_constants/outline_size = 1
 theme_override_fonts/font = ExtResource("4_xfq8v")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/focus = ExtResource("5_frwud")
-theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_lk0on")
-theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_lk0on")
+theme_override_styles/hover_pressed_mirrored = ExtResource("5_dmd7t")
+theme_override_styles/hover_pressed = ExtResource("5_dmd7t")
 theme_override_styles/hover_mirrored = ExtResource("5_frwud")
 theme_override_styles/hover = ExtResource("5_frwud")
-theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_lk0on")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_lk0on")
-theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_lk0on")
-theme_override_styles/normal = SubResource("StyleBoxTexture_lk0on")
+theme_override_styles/pressed_mirrored = ExtResource("5_dmd7t")
+theme_override_styles/pressed = ExtResource("5_dmd7t")
+theme_override_styles/normal_mirrored = ExtResource("5_dmd7t")
+theme_override_styles/normal = ExtResource("5_dmd7t")
 text = "Level 2"
 
 [node name="Level3Button" type="Button" parent="TextureRect/HBoxContainer/MarginContainerColumn1/HBoxContainer/VBoxContainer"]
@@ -123,14 +112,14 @@ theme_override_constants/outline_size = 1
 theme_override_fonts/font = ExtResource("4_xfq8v")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/focus = ExtResource("5_frwud")
-theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_lk0on")
-theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_lk0on")
+theme_override_styles/hover_pressed_mirrored = ExtResource("5_dmd7t")
+theme_override_styles/hover_pressed = ExtResource("5_dmd7t")
 theme_override_styles/hover_mirrored = ExtResource("5_frwud")
 theme_override_styles/hover = ExtResource("5_frwud")
-theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_lk0on")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_lk0on")
-theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_lk0on")
-theme_override_styles/normal = SubResource("StyleBoxTexture_lk0on")
+theme_override_styles/pressed_mirrored = ExtResource("5_dmd7t")
+theme_override_styles/pressed = ExtResource("5_dmd7t")
+theme_override_styles/normal_mirrored = ExtResource("5_dmd7t")
+theme_override_styles/normal = ExtResource("5_dmd7t")
 text = "Level 3"
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="TextureRect/HBoxContainer/MarginContainerColumn1/HBoxContainer"]
@@ -202,14 +191,14 @@ theme_override_constants/outline_size = 1
 theme_override_fonts/font = ExtResource("4_xfq8v")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/focus = ExtResource("5_frwud")
-theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_lk0on")
-theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_lk0on")
+theme_override_styles/hover_pressed_mirrored = ExtResource("5_dmd7t")
+theme_override_styles/hover_pressed = ExtResource("5_dmd7t")
 theme_override_styles/hover_mirrored = ExtResource("5_frwud")
 theme_override_styles/hover = ExtResource("5_frwud")
-theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_lk0on")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_lk0on")
-theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_lk0on")
-theme_override_styles/normal = SubResource("StyleBoxTexture_lk0on")
+theme_override_styles/pressed_mirrored = ExtResource("5_dmd7t")
+theme_override_styles/pressed = ExtResource("5_dmd7t")
+theme_override_styles/normal_mirrored = ExtResource("5_dmd7t")
+theme_override_styles/normal = ExtResource("5_dmd7t")
 text = "Level 4
 "
 
@@ -225,14 +214,14 @@ theme_override_constants/outline_size = 1
 theme_override_fonts/font = ExtResource("4_xfq8v")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/focus = ExtResource("5_frwud")
-theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_lk0on")
-theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_lk0on")
+theme_override_styles/hover_pressed_mirrored = ExtResource("5_dmd7t")
+theme_override_styles/hover_pressed = ExtResource("5_dmd7t")
 theme_override_styles/hover_mirrored = ExtResource("5_frwud")
 theme_override_styles/hover = ExtResource("5_frwud")
-theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_lk0on")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_lk0on")
-theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_lk0on")
-theme_override_styles/normal = SubResource("StyleBoxTexture_lk0on")
+theme_override_styles/pressed_mirrored = ExtResource("5_dmd7t")
+theme_override_styles/pressed = ExtResource("5_dmd7t")
+theme_override_styles/normal_mirrored = ExtResource("5_dmd7t")
+theme_override_styles/normal = ExtResource("5_dmd7t")
 text = "Level 5"
 
 [node name="Level6Button" type="Button" parent="TextureRect/HBoxContainer/MarginContainerColumn2/HBoxContainer/VBoxContainer"]
@@ -247,14 +236,14 @@ theme_override_constants/outline_size = 1
 theme_override_fonts/font = ExtResource("4_xfq8v")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/focus = ExtResource("5_frwud")
-theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_lk0on")
-theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_lk0on")
+theme_override_styles/hover_pressed_mirrored = ExtResource("5_dmd7t")
+theme_override_styles/hover_pressed = ExtResource("5_dmd7t")
 theme_override_styles/hover_mirrored = ExtResource("5_frwud")
 theme_override_styles/hover = ExtResource("5_frwud")
-theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_lk0on")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_lk0on")
-theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_lk0on")
-theme_override_styles/normal = SubResource("StyleBoxTexture_lk0on")
+theme_override_styles/pressed_mirrored = ExtResource("5_dmd7t")
+theme_override_styles/pressed = ExtResource("5_dmd7t")
+theme_override_styles/normal_mirrored = ExtResource("5_dmd7t")
+theme_override_styles/normal = ExtResource("5_dmd7t")
 text = "Level 6"
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="TextureRect/HBoxContainer/MarginContainerColumn2/HBoxContainer"]

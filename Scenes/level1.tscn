@@ -55,4 +55,3 @@ hint_enabled = true
 hint_text = "Seek the gold biscuit."
 
 [editable path="MainCharacter"]
-[editable path="MainCharacter/CharacterModel"]

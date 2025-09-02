@@ -140,10 +140,10 @@ func _input(event: InputEvent) -> void:
 			is_diving = true
 			jump_player.play()
 			var dive_velocity = get_dive_velocity()
-			# if dive in the opposite direction, the magnitude is same as initial jump
-			# if in same direction, the magnitude increases by 50%
+			 #if dive in the opposite direction, the magnitude is same as initial jump
+			 #if in same direction, the magnitude increases by 50%
 			if dive_velocity.dot(velocity) > 0:
-				velocity = 1.5 * dive_velocity
+				velocity = 1.2 * dive_velocity
 			else:
 				velocity = dive_velocity
 	
@@ -215,6 +215,7 @@ func play_animation(anim_name: String) -> void:
 
 func die() -> void:
 	is_dead = true
+	play_death_sound()
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "die":
@@ -222,6 +223,10 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 
 func play_footstep() -> void:
 	footstep_player.play()
+	
+func play_death_sound() -> void:
+	if !death_player.is_playing():
+		death_player.play(0.57)
 
 func check_level_beaten() -> void:
 	if GlobalState.is_current_level_cleared:
@@ -232,8 +237,7 @@ func check_level_beaten() -> void:
 		get_tree().change_scene_to_file("res://Scenes/ui/end_menu.tscn")
 
 func game_over() -> void:
-	if !death_player.is_playing():
-		death_player.play(0.57)
+	play_death_sound()
 	spring_arm.top_level = true;
 	GlobalState.stop_timer()
 	await get_tree().create_timer(1).timeout
